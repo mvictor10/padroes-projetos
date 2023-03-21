@@ -2,7 +2,7 @@
 
 # Padrões Criadores
 
-1 - Factory Method https://github.com/mvictor10/padroes-projetos/tree/main/abstractFactory
+1 - Factory Method 
 2 - Abstract Factory
 
 
