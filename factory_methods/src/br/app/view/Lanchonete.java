@@ -5,6 +5,7 @@
  */
 package br.app.view;
 
+import br.app.abstracts.Bebida;
 import br.app.fabrica.FabricaCafe;
 import br.app.fabrica.FabricaCappucino;
 import br.app.fabrica.FabricaCha;
@@ -162,10 +163,11 @@ public class Lanchonete extends javax.swing.JFrame {
     private void btnchocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchocolateActionPerformed
         // TODO add your handling code here:
         FabricaBebida fabrica = new FabricaChocolate();
+        Bebida bebida = fabrica.criarBebida();
         Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
+            bebida .getNome(),
+            bebida .getIngredientes(),
+            bebida .getPreco()
         );
         info.setVisible(true);
         this.dispose();
@@ -174,10 +176,11 @@ public class Lanchonete extends javax.swing.JFrame {
     private void btncafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncafeActionPerformed
         // TODO add your handling code here:
         FabricaBebida fabrica = new FabricaCafe();
+        Bebida bebida = fabrica.criarBebida();
         Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
+            bebida.getNome(),
+            bebida.getIngredientes(),
+            bebida.getPreco()
         );
         info.setVisible(true);
         this.dispose();
@@ -186,10 +189,11 @@ public class Lanchonete extends javax.swing.JFrame {
     private void btncappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncappucinoActionPerformed
         // TODO add your handling code here:
         FabricaBebida fabrica = new FabricaCappucino();
+        Bebida bebida = fabrica.criarBebida();
         Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
+            bebida.getNome(),
+            bebida.getIngredientes(),
+            bebida.getPreco()
         );
         info.setVisible(true);
         this.dispose();
@@ -198,10 +202,11 @@ public class Lanchonete extends javax.swing.JFrame {
     private void btnchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchaActionPerformed
         // TODO add your handling code here:
         FabricaBebida fabrica = new FabricaCha();
+        Bebida bebida = fabrica.criarBebida();
         Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
+            bebida.getNome(),
+            bebida.getIngredientes(),
+            bebida.getPreco()
         );
         info.setVisible(true);
         this.dispose();

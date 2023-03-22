@@ -6,8 +6,8 @@
 package prices;
 
 /**
- *
  * @author mvictor
+ *  Interface com todos preços das bebidas.
  */
 public interface Precos {
     public final static float cafe_quente = 2.0f;
