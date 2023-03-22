@@ -7,7 +7,7 @@ package fabrica;
 
 import bebidas.cappucino.CappucinoGelado;
 import bebidas.cappucino.CappucinoQuente;
-import br.app.abstracts.Bebida;
+import app.abstrata.Bebida;
 import app.interfaces.FabricaBebida;
 
 
