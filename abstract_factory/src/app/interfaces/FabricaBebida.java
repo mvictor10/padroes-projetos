@@ -5,7 +5,7 @@
  */
 package app.interfaces;
 
-import br.app.abstracts.Bebida;
+import app.abstrata.Bebida;
 
 /**
  *

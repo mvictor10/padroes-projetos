@@ -8,7 +8,7 @@ package fabrica;
 import app.interfaces.FabricaBebida;
 import bebidas.chocolate.ChocolateGelado;
 import bebidas.chocolate.ChocolateQuente;
-import br.app.abstracts.Bebida;
+import app.abstrata.Bebida;
 
 
 

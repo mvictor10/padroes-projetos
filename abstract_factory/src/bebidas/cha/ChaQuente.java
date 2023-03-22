@@ -6,7 +6,7 @@
 package bebidas.cha;
 
 
-import br.app.abstracts.Bebida;
+import app.abstrata.Bebida;
 import java.util.ArrayList;
 import prices.Precos;
 

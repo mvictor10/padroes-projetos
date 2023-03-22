@@ -7,7 +7,7 @@ package fabrica;
 
 import bebidas.cafe.CafeGelado;
 import bebidas.cafe.CafeQuente;
-import br.app.abstracts.Bebida;
+import app.abstrata.Bebida;
 import app.interfaces.FabricaBebida;
 
 /**

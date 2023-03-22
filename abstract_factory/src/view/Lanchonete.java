@@ -9,7 +9,7 @@ package view;
 
 import fabrica.FabricaCafe;
 import app.interfaces.FabricaBebida;
-import br.app.abstracts.Bebida;
+import app.abstrata.Bebida;
 import fabrica.FabricaCappucino;
 import fabrica.FabricaCha;
 import fabrica.FabricaChocolate;
