@@ -9,8 +9,10 @@ package view;
 
 import fabrica.FabricaCafe;
 import app.interfaces.FabricaBebida;
+import br.app.abstracts.Bebida;
 import fabrica.FabricaCappucino;
 import fabrica.FabricaCha;
+import fabrica.FabricaChocolate;
 import javax.swing.JOptionPane;
 
 /**
@@ -171,22 +173,23 @@ public class Lanchonete extends javax.swing.JFrame {
                 null,
                 itens, 
                 itens[0]);
+        FabricaBebida fabrica = new FabricaChocolate();
         if(selectedValue.equals("Chocolate Quente")){
-           FabricaBebida fabrica = new FabricaCafe();
+            Bebida hot = fabrica.criarBebidaQuente();
            Info info = new Info(
-                fabrica.criarBebidaQuente().getNome(),
-                fabrica.criarBebidaQuente().getIngredientes(),
-                fabrica.criarBebidaQuente().getPreco()
+                hot.getNome(),
+                hot.getIngredientes(),
+                hot.getPreco()
            );
            info.setVisible(true);
            this.dispose();
         }
         else{
-            FabricaBebida fabrica = new FabricaCafe();
+           Bebida cold = fabrica.criarBebidaGelada();
            Info info = new Info(
-                fabrica.criarBebidaGelada().getNome(),
-                fabrica.criarBebidaGelada().getIngredientes(),
-                fabrica.criarBebidaGelada().getPreco()
+                cold .getNome(),
+                cold .getIngredientes(),
+                cold .getPreco()
            );
            info.setVisible(true);
            this.dispose();
@@ -205,18 +208,20 @@ public class Lanchonete extends javax.swing.JFrame {
                 itens[0]);
         FabricaBebida fabrica = new FabricaCappucino();
         if (selectedValue.equals("Cappucino Quente")) {
+            Bebida hot = fabrica.criarBebidaQuente();
             Info info = new Info(
-                    fabrica.criarBebidaQuente().getNome(),
-                    fabrica.criarBebidaQuente().getIngredientes(),
-                    fabrica.criarBebidaQuente().getPreco()
+                    hot.getNome(),
+                    hot.getIngredientes(),
+                    hot.getPreco()
             );
             info.setVisible(true);
             this.dispose();
         } else {
+            Bebida cold = fabrica.criarBebidaGelada();
             Info info = new Info(
-                    fabrica.criarBebidaGelada().getNome(),
-                    fabrica.criarBebidaGelada().getIngredientes(),
-                    fabrica.criarBebidaGelada().getPreco()
+                    cold.getNome(),
+                    cold.getIngredientes(),
+                    cold.getPreco()
             );
             info.setVisible(true);
             this.dispose();
@@ -236,19 +241,21 @@ public class Lanchonete extends javax.swing.JFrame {
                 itens[0]);
         FabricaBebida fabrica = new FabricaCafe();
         if(selectedValue.equals("Café Quente")){
-           Info info = new Info(
-                fabrica.criarBebidaQuente().getNome(),
-                fabrica.criarBebidaQuente().getIngredientes(),
-                fabrica.criarBebidaQuente().getPreco()
+            Bebida hot = fabrica.criarBebidaQuente();
+            Info info = new Info(
+                hot.getNome(),
+                hot.getIngredientes(),
+                hot.getPreco()
            );
            info.setVisible(true);
            this.dispose();
         }
         else{
+            Bebida cold = fabrica.criarBebidaGelada();
            Info info = new Info(
-                fabrica.criarBebidaGelada().getNome(),
-                fabrica.criarBebidaGelada().getIngredientes(),
-                fabrica.criarBebidaGelada().getPreco()
+                cold.getNome(),
+                cold.getIngredientes(),
+                cold.getPreco()
            );
            info.setVisible(true);
            this.dispose();
@@ -267,19 +274,21 @@ public class Lanchonete extends javax.swing.JFrame {
                 itens[0]);
         FabricaBebida fabrica = new FabricaCha();
         if(selectedValue.equals("Chá Quente")){
+           Bebida hot = fabrica.criarBebidaQuente();
            Info info = new Info(
-                fabrica.criarBebidaQuente().getNome(),
-                fabrica.criarBebidaQuente().getIngredientes(),
-                fabrica.criarBebidaQuente().getPreco()
+                hot.getNome(),
+                hot.getIngredientes(),
+                hot.getPreco()
            );
            info.setVisible(true);
            this.dispose();
         }
         else{
+            Bebida cold = fabrica.criarBebidaGelada();
            Info info = new Info(
-                fabrica.criarBebidaGelada().getNome(),
-                fabrica.criarBebidaGelada().getIngredientes(),
-                fabrica.criarBebidaGelada().getPreco()
+                cold.getNome(),
+                cold.getIngredientes(),
+                cold.getPreco()
            );
            info.setVisible(true);
            this.dispose();
@@ -299,19 +308,21 @@ public class Lanchonete extends javax.swing.JFrame {
                 itens[0]);
         FabricaBebida fabrica = new FabricaCappucino();
         if(selectedValue.equals("Cappucino Quente")){
-           Info info = new Info(
-                fabrica.criarBebidaQuente().getNome(),
-                fabrica.criarBebidaQuente().getIngredientes(),
-                fabrica.criarBebidaQuente().getPreco()
+            Bebida hot = fabrica.criarBebidaQuente();
+            Info info = new Info(
+                hot.getNome(),
+                hot.getIngredientes(),
+                hot.getPreco()
            );
            info.setVisible(true);
            this.dispose();
         }
         else{
+            Bebida cold = fabrica.criarBebidaGelada();
            Info info = new Info(
-                fabrica.criarBebidaGelada().getNome(),
-                fabrica.criarBebidaGelada().getIngredientes(),
-                fabrica.criarBebidaGelada().getPreco()
+                cold.getNome(),
+                cold.getIngredientes(),
+                cold.getPreco()
            );
            info.setVisible(true);
            this.dispose();

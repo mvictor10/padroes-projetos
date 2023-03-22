@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/cappucino/CappucinoQuente.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/cafe/CafeGelado.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/fabrica/FabricaCha.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/cha/ChaGelado.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/view/Info.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/chocolate/ChocolateGelado.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/view/Lanchonete.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/fabrica/FabricaCafe.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/cafe/CafeQuente.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/app/abstrata/Bebida.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/cha/ChaQuente.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/fabrica/FabricaCappucino.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/fabrica/FabricaChocolate.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/app/interfaces/FabricaBebida.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/chocolate/ChocolateQuente.java</file>
+            <file>file:/C:/Users/mvictor/Documents/NetBeansProjects/abstract_factory/src/bebidas/cappucino/CappucinoGelado.java</file>
+        </group>
+    </open-files>
+</project-private>
