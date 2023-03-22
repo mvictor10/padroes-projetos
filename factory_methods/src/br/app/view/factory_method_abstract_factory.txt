@@ -1,0 +1,8 @@
+Faça um projeto em java no padrão 'Factory Method' e 'Abstract Factory' de um projeto, o projeto no padrão factory method deve seguir esse descrição: O sistema deve implementar uma lanchonete que serve diferentes tipos de bebidas: café, cappucino, chocolate e chá.
+Cada uma das bebidas tem sua descrição, seu preço e seus ingredientes.
+Deve haver uma superclasse para as bebidas.
+Deve ser criada uma interface de fábrica e uma fábrica concreta para cada tipo de bebida.
+Deve ser implementa uma interface gráfica (classe cliente), onde o usuário seleciona a bebida que deseja. Como resposta o sistema deve exibir suas informações, para que o usuário confirme o pedido.
+ Após isso faça o código do padrão abstract Factory de acordo com essa seguinte descrição: O sistema anterior deve ser modificado para permitir criar dois tipos diferentes de categorias para as bebidas: quente e gelado.
+As fábricas devem ser modificadas para permitir essa variação.
+A interface gráfica também deve ser ajustada para permitir selecionar o tipo desejado. Porfavor comete no código sobre cada coisa.

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package abstracts;
+package app.abstrata;
 
 import java.util.List;
 
@@ -15,6 +15,7 @@ public abstract class Bebida {
     protected String nome;
     protected double preco;
     protected List<String> ingredientes;
+    
     public String getNome(){ return nome;}
     public double getPreco(){return preco;}
     public List<String> getIngredientes(){ return ingredientes;}
