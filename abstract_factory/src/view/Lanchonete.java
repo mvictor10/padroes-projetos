@@ -5,11 +5,13 @@
  */
 package view;
 
-import br.app.fabrica.FabricaCafe;
-import br.app.fabrica.FabricaCappucino;
-import br.app.fabrica.FabricaCha;
-import br.app.fabrica.FabricaChocolate;
-import br.app.interfaces.FabricaBebida;
+
+
+import fabrica.FabricaCafe;
+import app.interfaces.FabricaBebida;
+import fabrica.FabricaCappucino;
+import fabrica.FabricaCha;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -67,7 +69,7 @@ public class Lanchonete extends javax.swing.JFrame {
         btncappucino.setRolloverEnabled(false);
         btncappucino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncappucinoActionPerformed(evt);
+                btnActionCappucino(evt);
             }
         });
 
@@ -161,51 +163,160 @@ public class Lanchonete extends javax.swing.JFrame {
 
     private void btnchocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchocolateActionPerformed
         // TODO add your handling code here:
-        FabricaBebida fabrica = new FabricaChocolate();
-        Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
-        );
-        info.setVisible(true);
-        this.dispose();
+        Object[] itens = {"Chocolate Quente", "Chocolate Gelado"};
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de Chocolate?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
+        if(selectedValue.equals("Chocolate Quente")){
+           FabricaBebida fabrica = new FabricaCafe();
+           Info info = new Info(
+                fabrica.criarBebidaQuente().getNome(),
+                fabrica.criarBebidaQuente().getIngredientes(),
+                fabrica.criarBebidaQuente().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
+        else{
+            FabricaBebida fabrica = new FabricaCafe();
+           Info info = new Info(
+                fabrica.criarBebidaGelada().getNome(),
+                fabrica.criarBebidaGelada().getIngredientes(),
+                fabrica.criarBebidaGelada().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
+    }                                       
+
+    private void btncappucinoActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        Object[] itens = {"Cappucino Quente", "Cappucino Gelado"};
+        Object selectedValue = JOptionPane.showInputDialog(rootPane,
+                "Você gostaria de qual tipo de Cappucino?",
+                "Opção",
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                itens,
+                itens[0]);
+        FabricaBebida fabrica = new FabricaCappucino();
+        if (selectedValue.equals("Cappucino Quente")) {
+            Info info = new Info(
+                    fabrica.criarBebidaQuente().getNome(),
+                    fabrica.criarBebidaQuente().getIngredientes(),
+                    fabrica.criarBebidaQuente().getPreco()
+            );
+            info.setVisible(true);
+            this.dispose();
+        } else {
+            Info info = new Info(
+                    fabrica.criarBebidaGelada().getNome(),
+                    fabrica.criarBebidaGelada().getIngredientes(),
+                    fabrica.criarBebidaGelada().getPreco()
+            );
+            info.setVisible(true);
+            this.dispose();
+        }
+
     }//GEN-LAST:event_btnchocolateActionPerformed
 
     private void btncafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncafeActionPerformed
         // TODO add your handling code here:
+        Object[] itens = {"Café Quente", "Café Gelado"};
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de café?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
         FabricaBebida fabrica = new FabricaCafe();
-        Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
-        );
-        info.setVisible(true);
-        this.dispose();
+        if(selectedValue.equals("Café Quente")){
+           Info info = new Info(
+                fabrica.criarBebidaQuente().getNome(),
+                fabrica.criarBebidaQuente().getIngredientes(),
+                fabrica.criarBebidaQuente().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
+        else{
+           Info info = new Info(
+                fabrica.criarBebidaGelada().getNome(),
+                fabrica.criarBebidaGelada().getIngredientes(),
+                fabrica.criarBebidaGelada().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
     }//GEN-LAST:event_btncafeActionPerformed
-
-    private void btncappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncappucinoActionPerformed
-        // TODO add your handling code here:
-        FabricaBebida fabrica = new FabricaCappucino();
-        Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
-        );
-        info.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btncappucinoActionPerformed
 
     private void btnchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchaActionPerformed
         // TODO add your handling code here:
+        Object[] itens = {"Chá Quente", "Chá Gelado"};
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de Chá?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
         FabricaBebida fabrica = new FabricaCha();
-        Info info = new Info(
-            fabrica.criarBebida().getNome(),
-            fabrica.criarBebida().getIngredientes(),
-            fabrica.criarBebida().getPreco()
-        );
-        info.setVisible(true);
-        this.dispose();
+        if(selectedValue.equals("Chá Quente")){
+           Info info = new Info(
+                fabrica.criarBebidaQuente().getNome(),
+                fabrica.criarBebidaQuente().getIngredientes(),
+                fabrica.criarBebidaQuente().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
+        else{
+           Info info = new Info(
+                fabrica.criarBebidaGelada().getNome(),
+                fabrica.criarBebidaGelada().getIngredientes(),
+                fabrica.criarBebidaGelada().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
     }//GEN-LAST:event_btnchaActionPerformed
+
+    private void btnActionCappucino(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionCappucino
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        Object[] itens = {"Cappucino Quente", "Cappucino Gelado"};
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de Cappucino?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
+        FabricaBebida fabrica = new FabricaCappucino();
+        if(selectedValue.equals("Cappucino Quente")){
+           Info info = new Info(
+                fabrica.criarBebidaQuente().getNome(),
+                fabrica.criarBebidaQuente().getIngredientes(),
+                fabrica.criarBebidaQuente().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
+        else{
+           Info info = new Info(
+                fabrica.criarBebidaGelada().getNome(),
+                fabrica.criarBebidaGelada().getIngredientes(),
+                fabrica.criarBebidaGelada().getPreco()
+           );
+           info.setVisible(true);
+           this.dispose();
+        }
+    }//GEN-LAST:event_btnActionCappucino
 
     /**
      * @param args the command line arguments
