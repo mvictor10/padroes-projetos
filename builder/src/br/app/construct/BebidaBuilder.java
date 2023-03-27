@@ -5,10 +5,10 @@
  */
 package br.app.construct;
 
-import br.app.abstracts.Bebidas;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import br.app.abstracts.Bebida;
 
 /**
  *
@@ -40,8 +40,14 @@ public class BebidaBuilder {
         return this;
     }
     
-    public Bebidas build(){
-        return new Bebidas(nome, items, preco);
+    public Bebida build() {
+        return new Bebida() {
+            {
+                this.nome = nome;
+                this.preco = preco;
+                this.items = items;
+            }
+        };
     }
         
 }
