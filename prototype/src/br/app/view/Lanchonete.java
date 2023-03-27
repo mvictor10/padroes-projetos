@@ -44,6 +44,7 @@ public class Lanchonete extends javax.swing.JFrame {
         btnchocolate = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,13 +109,20 @@ public class Lanchonete extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setText("Clique no Icone para realizar a compra.");
 
+        jLabel2.setText("Chocolate do Vitão - Atendimento 24 horas");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLabel1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -122,7 +130,9 @@ public class Lanchonete extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -137,7 +147,7 @@ public class Lanchonete extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(btnchocolate, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                         .addComponent(btncha, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
@@ -161,7 +171,7 @@ public class Lanchonete extends javax.swing.JFrame {
                     .addComponent(btncha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(42, 42, 42)
@@ -268,14 +278,361 @@ public class Lanchonete extends javax.swing.JFrame {
 
     private void btnchocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchocolateActionPerformed
         // TODO add your handling code here:
+        Info info = null;
+        
+        
+        Object[] itens = {
+            "Chocalate", 
+            "Chocolate Expresso", 
+            "Gelado de Chocolate",
+            "Milf de Chocolate"
+        };
+        
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de chocolate?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
+        
+        if(selectedValue.equals(itens[0])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("chocolate");
+                cafe.setNome("Chocolate Quente");
+                cafe.setItems(Arrays.asList(
+                    "Chocolate em Pó",
+                    "Açucar",
+                    "Leite"
+                ));
+                cafe.setPreco(2.50);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[1])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("chocolate");
+                cafe.setNome("Chocolate expresso");
+                cafe.setItems(Arrays.asList(
+                    "Achocolatado em Pó",
+                    "Açucar",
+                    "Leite Quente",
+                    "Leite Condesado",
+                    "Creme de Leite"
+                ));
+                cafe.setPreco(8.30);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[2])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("chocolate");
+                cafe.setNome("Gelado de Chocolate");
+                cafe.setItems(Arrays.asList(
+                    "Essencia de Achocolatado",
+                    "Água com Gás",
+                    "Cubos de Gelo",
+                    "Energético",
+                    "Guarana em Pó",
+                    "Rodelas de Limão",
+                    "Creme de Leite",
+                    "Essencial de Bauninha",
+                    "Espumante"
+                ));
+                cafe.setPreco(12.50);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[3])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("chocolate");
+                cafe.setNome("Solvete de Chocolate");
+                cafe.setItems(Arrays.asList(
+                    "Essencial de Chocolate",
+                    "Solvete batido",
+                    "Leite condesado",
+                    "Granulado de Chocolate",
+                    "Creme de Leite",
+                    "Bastones de chocolate",
+                    "Rodelas de Limão",
+                    "Cobertura de Limão",
+                    "Pó de leite",
+                    "Açai"
+                ));
+                cafe.setPreco(4.00);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
     }//GEN-LAST:event_btnchocolateActionPerformed
 
     private void btncappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncappucinoActionPerformed
         // TODO add your handling code here:
+        Info info = null;
+        
+        
+        Object[] itens = {
+            "Cappucino Tradicional", 
+            "Cappucino Expresso", 
+            "Cappucino de Morango",
+            "Cappucino La Lima"
+        };
+        
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de cappucino?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
+        
+        if(selectedValue.equals(itens[0])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("cappucino");
+                cafe.setNome("Cappucino Tradicional");
+                cafe.setItems(Arrays.asList(
+                    "Chocolate em Pó",
+                    "Creme de Leite",
+                    "Leite condesado",
+                    "Espumante de Leite",
+                    "Açucar",
+                    "Leite quente"
+                ));
+                cafe.setPreco(2.50);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[1])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("cappucino");
+                cafe.setNome("Cappucino Expresso");
+                cafe.setItems(Arrays.asList(
+                    "Achocolatado em Pó",
+                    "Açucar",
+                    "Café descafeinado",
+                    "Leite Quente",
+                    "Leite Condesado",
+                    "Granulados",
+                    "Creme de Leite"
+                ));
+                cafe.setPreco(8.30);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[2])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("cappucino");
+                cafe.setNome("Cappucino de Morango");
+                cafe.setItems(Arrays.asList(
+                    "Achocolatado em Pó",
+                    "Açucar",
+                    "Café descafeinado",
+                    "Leite Quente",
+                    "Leite Condesado",
+                    "Granulados",
+                    "Creme de Leite",
+                    "Essencial de Morango"
+                ));
+                cafe.setPreco(12.50);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[3])){
+            BebidasPrototype cafe = GerenciarBebidas.getPrototipo("cappucino");
+                cafe.setNome("Cappucino La Lima");
+                cafe.setItems(Arrays.asList(
+                    "Achocolatado em Pó",
+                    "Açucar",
+                    "Café descafeinado",
+                    "Leite Quente",
+                    "Leite Condesado",
+                    "Granulados",
+                    "Creme de Leite",
+                    "Essencia de limão"
+                ));
+                cafe.setPreco(16.48);
+                info = new Info(
+                    cafe.getNome(), 
+                    cafe.getItems(),
+                    cafe.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
     }//GEN-LAST:event_btncappucinoActionPerformed
 
     private void btnchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchaActionPerformed
         // TODO add your handling code here:
+        Info info = null;
+        
+        
+        Object[] itens = {
+            "Chá de Limão", 
+            "Chá Verde", 
+            "Cha de Erva Doce",
+            "Chá de Hortelã",
+            "Chá de Capim Santo + Limão",
+            "Chá Preto",
+            "Chá de Limão + Erva Cidreira +  Canela"
+        };
+        
+        Object selectedValue = JOptionPane.showInputDialog(rootPane, 
+                "Você gostaria de qual tipo de chá?",
+                "Opção", 
+                JOptionPane.INFORMATION_MESSAGE, 
+                null,
+                itens, 
+                itens[0]);
+        
+        if(selectedValue.equals(itens[0])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Chá de Limão");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de Limão"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[1])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Chá Verde");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de chá verde"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[2])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Cha de Erva Doce");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de erva doce"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[3])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Chá de Hortelã");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de hortelã"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[4])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Chá de Capim Santo + Limão");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de capim santo",
+                    "Essencial de Limão"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[5])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Chá Preto");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de chá preto"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
+        else if(selectedValue.equals(itens[6])){
+            BebidasPrototype cha = GerenciarBebidas.getPrototipo("cha");
+                cha.setNome("Chá de Limão + Erva Cidreira +  Canela");
+                cha.setItems(Arrays.asList(
+                    "Água Quente",
+                    "Açuca Mascavo",
+                    "Essencia de Erva Cidreira",
+                    "Essencial de Limão",
+                    "Essencial de Canela + Cravo"
+                ));
+                cha.setPreco(2.50);
+                info = new Info(
+                    cha.getNome(), 
+                    cha.getItems(),
+                    cha.getPreco()
+                );
+                info.setVisible(true);
+                this.dispose();
+        }
     }//GEN-LAST:event_btnchaActionPerformed
 
     /**
@@ -319,6 +676,7 @@ public class Lanchonete extends javax.swing.JFrame {
     private javax.swing.JButton btncha;
     private javax.swing.JButton btnchocolate;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
