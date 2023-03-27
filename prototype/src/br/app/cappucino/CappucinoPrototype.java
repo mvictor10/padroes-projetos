@@ -11,15 +11,15 @@ import java.util.List;
  *
  * @author mvictor
  */
-public class Cappucino extends BebidasPrototype {
+public class CappucinoPrototype extends BebidasPrototype {
 
-    public Cappucino(String nome, List<String> items, double preco) {
+    public CappucinoPrototype(String nome, List<String> items, double preco) {
         super(nome, items, preco);
     }
 
     @Override
     public BebidasPrototype clonar() {
-        return new Cappucino(nome, items, preco);
+        return new CappucinoPrototype(nome, items, preco);
     }
     
 }
