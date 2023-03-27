@@ -40,7 +40,7 @@ public class BebidaBuilder {
     }
     
     public Bebidas build(){
-        return new Bebidas(nome, items, preco) {};
+        return new Bebidas(nome, items, preco);
     }
         
 }

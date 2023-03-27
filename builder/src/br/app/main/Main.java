@@ -12,7 +12,9 @@ package br.app.main;
  * @author mvictor
  */
 public class Main {
-    public static void main(String...args){
-        System.out.println("test");
+    
+    public static void main(String[] args){
+        System.out.println("Vai se fuder");
     }
+    
 }
