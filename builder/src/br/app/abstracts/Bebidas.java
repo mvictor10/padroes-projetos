@@ -11,14 +11,11 @@ import java.util.List;
  *
  * @author mvictor
  */
-public abstract class Bebidas {
+public class Bebidas {
 
-    /**
-     *
-     */
-    protected String nome;
-    protected List<String> items;
-    protected double preco;
+    private final String nome;
+    private final List<String> items;
+    private final double preco;
     
     public Bebidas(String nome, List<String> items, double preco){
         this.nome = nome;
