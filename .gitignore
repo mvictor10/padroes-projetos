@@ -24,3 +24,5 @@ hs_err_pid*
 /abstractFactory/build/
 /factory_methods/build/
 /factory_methods/nbproject/private/
+/prototype/build/
+/prototype/nbproject/private/
