@@ -17,7 +17,7 @@ import java.util.List;
 public class BebidaBuilder {
     private String nome;
     private double preco;
-    private List<String> items = new ArrayList<>();
+    private final List<String> items = new ArrayList<>();
     
     public BebidaBuilder withNome(String nome){
         this.nome = nome;
