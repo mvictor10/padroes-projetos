@@ -11,17 +11,10 @@ import java.util.List;
  *
  * @author mvictor
  */
-public class Bebidas {
-
-    private final String nome;
-    private final List<String> items;
-    private final double preco;
-    
-    public Bebidas(String nome, List<String> items, double preco){
-        this.nome = nome;
-        this.items = items;
-        this.preco = preco;
-    }
+public abstract class Bebida {
+    private String nome;
+    private List<String>items;
+    private double preco;
 
     public String getNome() {
         return nome;
@@ -34,5 +27,4 @@ public class Bebidas {
     public double getPreco() {
         return preco;
     }
-    
 }
