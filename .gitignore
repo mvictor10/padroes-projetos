@@ -27,3 +27,5 @@ hs_err_pid*
 /prototype/build/
 /prototype/nbproject/private/
 /prototype/dist/
+/Builder/nbproject/private/
+/builder/nbproject/private/
