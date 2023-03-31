@@ -5,7 +5,6 @@
  */
 package bebidas.cafe;
 
-
 import app.abstrata.Bebida;
 import java.util.ArrayList;
 import prices.Precos;
@@ -14,16 +13,15 @@ import prices.Precos;
  *
  * @author mvictor
  */
-public class CafeGelado extends Bebida {
+public class CafeQuente extends Bebida {
 
-    public CafeGelado() {
-        this.nome = "Café Gelado";
-        this.preco = Precos.cafe_gelado;
+    public CafeQuente() {
+        this.nome = "Café Quente";
+        this.preco = Precos.cafe_quente;
         this.ingredientes = new ArrayList<>();
         ingredientes.add("Café em Pó");
-        ingredientes.add("Água");
-        ingredientes.add("Gelo");
-        ingredientes.add("Leite Condesado");
+        ingredientes.add("Água Quente");
+        ingredientes.add("Açucar");
     }
     
 }

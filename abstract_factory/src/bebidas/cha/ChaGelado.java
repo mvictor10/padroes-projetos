@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bebidas.cafe;
+package bebidas.cha;
 
 
 import app.abstrata.Bebida;
@@ -14,16 +14,16 @@ import prices.Precos;
  *
  * @author mvictor
  */
-public class CafeGelado extends Bebida {
+public class ChaGelado extends Bebida {
 
-    public CafeGelado() {
-        this.nome = "Café Gelado";
-        this.preco = Precos.cafe_gelado;
+    public ChaGelado() {
+        this.nome = "Chá Gelado";
+        this.preco = Precos.cappucino_quente;
         this.ingredientes = new ArrayList<>();
-        ingredientes.add("Café em Pó");
-        ingredientes.add("Água");
+        ingredientes.add("Chá em Pó");
         ingredientes.add("Gelo");
-        ingredientes.add("Leite Condesado");
+        ingredientes.add("Açucar");
+        ingredientes.add("Água");
     }
     
 }

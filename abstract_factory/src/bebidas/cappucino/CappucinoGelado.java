@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bebidas.cafe;
-
+package bebidas.cappucino;
 
 import app.abstrata.Bebida;
 import java.util.ArrayList;
@@ -14,15 +13,17 @@ import prices.Precos;
  *
  * @author mvictor
  */
-public class CafeGelado extends Bebida {
+public class CappucinoGelado extends Bebida {
 
-    public CafeGelado() {
-        this.nome = "Café Gelado";
-        this.preco = Precos.cafe_gelado;
+    public CappucinoGelado() {
+        this.nome = "Cappucino Gelado";
+        this.preco = Precos.cappucino_quente;
         this.ingredientes = new ArrayList<>();
         ingredientes.add("Café em Pó");
-        ingredientes.add("Água");
+        ingredientes.add("Chocolate em Pó");
+        ingredientes.add("Leite em Pó");
         ingredientes.add("Gelo");
+        ingredientes.add("Água");
         ingredientes.add("Leite Condesado");
     }
     

@@ -11,21 +11,12 @@ import java.util.List;
  *
  * @author mvictor
  */
-
 public abstract class Bebida {
     protected String nome;
-    protected List<String>items;
     protected double preco;
-
-    public String getNome() {
-        return nome;
-    }
-
-    public List<String> getItems() {
-        return items;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
+    protected List<String> ingredientes;
+    
+    public String getNome(){ return nome;}
+    public double getPreco(){return preco;}
+    public List<String> getIngredientes(){ return ingredientes;}
 }
