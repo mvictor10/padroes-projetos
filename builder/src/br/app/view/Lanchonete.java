@@ -5,7 +5,12 @@
  */
 package br.app.view;
 
-
+import bebida.BebidaBuilder;
+import diretor.Diretor;
+import javax.swing.JOptionPane;
+import modelo.Bebida;
+import builder.BebidaInterface;
+import java.awt.HeadlessException;
 
 
 /**
@@ -13,7 +18,19 @@ package br.app.view;
  * @author mvictor
  */
 public class Lanchonete extends javax.swing.JFrame {
-
+    
+    
+    /**
+         * Fabrica de Bebida,
+         * Aqui iremos criar a instância da classe que irá
+         * criar a  construir a bebida.
+         */
+        private final Diretor diretor = new Diretor();
+        private final BebidaInterface bebidaBuilder = new BebidaBuilder();
+        private Bebida cappucino, cafe, chocolate, cha;
+       
+    
+    
     /**
      * Creates new form Lanchonete
      */
@@ -40,6 +57,7 @@ public class Lanchonete extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btncafe.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btncafe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/cafe.png"))); // NOI18N
@@ -68,12 +86,22 @@ public class Lanchonete extends javax.swing.JFrame {
         btncha.setText("Chá");
         btncha.setBorderPainted(false);
         btncha.setContentAreaFilled(false);
+        btncha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnchaActionPerformed(evt);
+            }
+        });
 
         btnchocolate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnchocolate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/chocolate.png"))); // NOI18N
         btnchocolate.setText("Chocolate");
         btnchocolate.setBorderPainted(false);
         btnchocolate.setContentAreaFilled(false);
+        btnchocolate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnchocolateActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -150,14 +178,335 @@ public class Lanchonete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btncappucinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncappucinoActionPerformed
-        // TODO add your handling code here:
+       
+        
+        try{
+                /**
+             * Lista de Bebidas.
+             */
+           Object[] bebidas = {
+               "Cappucino Tradicional", "Latte", "Mocha", "Macchiato"
+           };
+           /**
+            * Pega a opção escolhida.
+            */
+           Object escolha = JOptionPane.showInputDialog(rootPane, 
+                   "Escolha a bebida", "Opções de Bebebidas", 
+                   JOptionPane.INFORMATION_MESSAGE, null,
+                   bebidas, bebidas[0]);
+
+           /**
+            * Abre uma nova tela com as bebidas escolhidas.
+            */
+           if(escolha.equals(bebidas[0])){ //cappucino tradicional
+
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirCappucinoTradicional();
+
+                cappucino = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cappucino.getNome(),
+                    cappucino.getIngredientes(),
+                    cappucino.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+           else if(escolha.equals(bebidas[1])){ // Latte
+
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirLatte();
+
+                cappucino = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cappucino.getNome(),
+                    cappucino.getIngredientes(),
+                    cappucino.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+           else if(escolha.equals(bebidas[2])){ // Mocha
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirMocha();
+
+                cappucino = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cappucino.getNome(),
+                    cappucino.getIngredientes(),
+                    cappucino.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+           else if(escolha.equals(bebidas[3])){
+               diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirMacchiato();
+
+                cappucino = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cappucino.getNome(),
+                    cappucino.getIngredientes(),
+                    cappucino.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+        }catch(HeadlessException ex){
+            System.err.print(ex.getCause());
+        }
         
     }//GEN-LAST:event_btncappucinoActionPerformed
 
     private void btncafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncafeActionPerformed
+        
+        try{
+            /**
+             * Fabrica de Bebida,
+             * Aqui iremos criar a instância da classe que irá
+             * criar a  construir a bebida.
+             */
+
+            /**
+             * Lista de Bebidas.
+             */
+           Object[] bebidas = {
+               "Café Normal", "Café com Leite", "Café descafeinado"
+           };
+           /**
+            * Pega a opção escolhida.
+            */
+           Object escolha = JOptionPane.showInputDialog(rootPane, 
+                   "Escolha a bebida", "Opções de Bebebidas", 
+                   JOptionPane.INFORMATION_MESSAGE, null,
+                   bebidas, bebidas[0]);
+
+           /**
+            * Abre uma nova tela com as bebidas escolhidas.
+            */
+           if(escolha.equals(bebidas[0])){
+
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirCafe();
+
+                cafe = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cafe.getNome(),
+                    cafe.getIngredientes(),
+                    cafe.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+           else if(escolha.equals(bebidas[1])){ //cafe com leite
+
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirCafeComLeite();
+
+                cafe = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cafe.getNome(),
+                    cafe.getIngredientes(),
+                    cafe.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+           else if(escolha.equals(bebidas[2])){ // cappucino descafeinado
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirCafeDescafeinado();
+
+               cafe = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    cafe.getNome(),
+                    cafe.getIngredientes(),
+                    cafe.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+           }
+        }
+        catch(HeadlessException ex){
+            System.out.println(ex.getCause());
+        }
+    }//GEN-LAST:event_btncafeActionPerformed
+
+    private void btnchocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchocolateActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_btncafeActionPerformed
+        
+        try{
+             Object[] bebidas = {
+               "Chocolate Quente", "Solvete de Chocolate", "Milkshake"
+            };
+            /**
+            * Pega a opção escolhida.
+            */
+           Object escolha = JOptionPane.showInputDialog(rootPane, 
+                   "Escolha a bebida", "Opções de Bebebidas", 
+                   JOptionPane.INFORMATION_MESSAGE, null,
+                   bebidas, bebidas[0]);
+
+            if(escolha.equals(bebidas[0])){ //chocolate tradicional
+
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirCappucinoTradicional();
+
+                this.chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[1])){ //solvete
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirSolveteDeChocolate();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[2])){ //milkshake
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirMilkShake();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+        }catch(HeadlessException ex){
+            System.out.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_btnchocolateActionPerformed
+
+    private void btnchaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchaActionPerformed
+        // TODO add your handling code here:
+        try{
+            Object[] bebidas = {
+               "Camomila", "Erva Doce", "Gengibre", "Hortela",
+                "Chá Preto", "Chá Verde"
+            };
+            /**
+            * Pega a opção escolhida.
+            */
+           Object escolha = JOptionPane.showInputDialog(rootPane, 
+                   "Escolha a bebida", "Opções de Bebebidas", 
+                   JOptionPane.INFORMATION_MESSAGE, null,
+                   bebidas, bebidas[0]);
+
+            if(escolha.equals(bebidas[0])){ //camomila
+
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirChaCamomila();
+
+                this.chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[1])){ //erva doce
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirChaErvaDoce();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[2])){ //gengibre
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirChaGengibre();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[3])){ //hortelã
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirChaHortela();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[4])){ //cha preto
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirChaPreto();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            else if(escolha.equals(bebidas[5])){ //cha verde
+                diretor.setBebidaBuilder(bebidaBuilder);
+                diretor.construirChaVerde();
+
+                chocolate = diretor.getBebida();
+
+                Informacoes informacoes = new Informacoes(
+                    chocolate.getNome(),
+                    chocolate.getIngredientes(),
+                    chocolate.getPreco()
+                );
+                informacoes.setVisible(true);
+                this.dispose();
+            }
+            
+        }catch(Exception ex){
+            System.err.print(ex.getCause());
+        }
+    }//GEN-LAST:event_btnchaActionPerformed
 
     /**
      * @param args the command line arguments

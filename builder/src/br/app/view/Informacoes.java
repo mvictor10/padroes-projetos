@@ -6,6 +6,7 @@
 package br.app.view;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,16 +29,20 @@ public class Informacoes extends javax.swing.JFrame {
         Informacoes.nome = nome;
         Informacoes.items = items;
         Informacoes.preco = preco;
+       
+        initComponents();
+       
+        this.txtnome.setEditable(false);
+        this.txtpreco.setEditable(false);
+        this.txtitems.setEditable(false);
         
-        this.txtnome.setText(Informacoes.nome);
-        this.txtpreco.setText("R$ " + Informacoes.preco);
-        StringBuilder ingredientes = new StringBuilder();
-        int i = 1;
-        for(String out: items){
-            ingredientes.append(""+i).append(". "+out);
-            i++;
-        }
-        this.txtitems.setText(ingredientes.toString());
+        this.txtnome.setText(nome);
+        this.txtpreco.setText("R$: "+preco);
+        StringBuilder texto = new StringBuilder();
+        items.forEach((saida) -> {
+            texto.append("").append(saida).append("\n");
+        });
+        this.txtitems.setText(texto.toString());
     }
 
     /**
@@ -61,6 +66,7 @@ public class Informacoes extends javax.swing.JFrame {
         btncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Informações da Bebida", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -79,9 +85,19 @@ public class Informacoes extends javax.swing.JFrame {
 
         btnbuy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnbuy.setText("Comprar");
+        btnbuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuyActionPerformed(evt);
+            }
+        });
 
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btncancel.setText("Cancelar");
+        btncancel.setText("Voltar");
+        btncancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,7 +119,7 @@ public class Informacoes extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnbuy)
                         .addGap(18, 18, 18)
-                        .addComponent(btncancel)))
+                        .addComponent(btncancel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,6 +163,32 @@ public class Informacoes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnbuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuyActionPerformed
+        // TODO add your handling code here:
+        int opcao = JOptionPane.showConfirmDialog(rootPane, 
+            "Você deseja confirmar a compra?",
+            "Confirmar compra.", JOptionPane.YES_NO_OPTION);
+        
+        switch(opcao){
+            case 0:
+                JOptionPane.showMessageDialog(rootPane, "A compra foi realizado com sucesso.");
+                Lanchonete voltar = new Lanchonete();
+                voltar.setVisible(true);
+                this.dispose();
+                break;
+            case 1:
+                JOptionPane.showMessageDialog(rootPane, "Compra cancelada");
+                break;
+        }
+    }//GEN-LAST:event_btnbuyActionPerformed
+
+    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+        // TODO add your handling code here:
+        Lanchonete voltar = new Lanchonete();
+        voltar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btncancelActionPerformed
 
     /**
      * @param args the command line arguments
