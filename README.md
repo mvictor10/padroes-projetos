@@ -2,12 +2,12 @@
 
 ### Padrões Criadores
 
-- Factory Method
-- Abstract Factory
-- Builder
-- Prototype
+- [x] Factory Method
+- [x] Abstract Factory
+- [x] Builder
+- [x] Prototype
 
 ### Padrões Estruturais
-- Decorator
+- [x] Decorator
 
 ### Padrões Comportamentais
