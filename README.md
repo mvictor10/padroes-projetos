@@ -8,3 +8,4 @@
 ### Padrões Estruturais
 - [Decorator](https://github.com/mvictor10/padroes-projetos/tree/main/Decorator)
 ### Padrões Comportamentais
+- [Command](https://github.com/mvictor10/padroes-projetos/tree/main/atividade-command)
